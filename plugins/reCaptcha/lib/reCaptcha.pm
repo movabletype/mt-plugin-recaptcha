@@ -14,6 +14,16 @@ use strict;
 use warnings;
 use base qw(MT::ErrorHandler);
 
+sub debuglog {
+    return unless MT->config->ReCaptchaDebug;
+    my $msg = shift || return;
+    require MT;
+    MT->log({
+        message => "reCaptcha: $msg",
+        level   => MT::Log::DEBUG(),
+    });
+}
+
 sub form_fields {
     my $self = shift;
     my ($blog_id) = @_;
@@ -56,6 +66,7 @@ FORM_FIELD
 sub validate_captcha {
     my $self = shift;
     my ($app) = @_;
+
     my $entry_id = $app->param('entry_id')
       or return 0;
 
@@ -81,12 +92,22 @@ sub validate_captcha {
 	$content .= '&challenge=' . MT::Util::encode_url($challenge);
 	$content .= '&response=' . MT::Util::encode_url($response);
     $req->content($content);
+    debuglog("sending verification request: '$content'");
+
     my $res = $ua->request($req);
     my $c = $res->content;
+
     if (substr($res->code, 0, 1) eq '2') {
-		return 1 if $c =~ /^true\n/;
-	}
-	0;
+        if ($c =~ /^true\n/) {
+            debuglog("submitted code is valid: '$c'");
+            return 1;
+        }
+        debuglog("submitted code is not valid: '$c'");
+    } else {
+        debuglog("verification failed: response code: '" . $res->code . "', content: '$c'");
+    }
+
+    return 0;
 }
     
 sub generate_captcha {

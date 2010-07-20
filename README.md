@@ -74,6 +74,11 @@ Should look like this when installed:
 
 [More in-depth plugin installation instructions](http://tinyurl.com/easy-plugin-install).
 
+## Troubleshooting
+
+Add the following MT config directive to write validation requests and responses to the Activity log:
+
+    ReCaptchaDebug 1
 
 ## Desired Feature Wish List
 
