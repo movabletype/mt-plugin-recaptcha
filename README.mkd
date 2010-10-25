@@ -71,7 +71,7 @@ Replace this with this code:
 
 ## Installation
 
-1. Move the `reCaptcha` plugin directory to the MT `plugins` directory.
+* Move the `reCaptcha` plugin directory to the MT `plugins` directory.
 
 Should look like this when installed:
 
