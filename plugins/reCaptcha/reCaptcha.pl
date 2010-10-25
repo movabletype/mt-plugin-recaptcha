@@ -21,7 +21,7 @@ my $plugin = MT::Plugin::reCaptcha->new({
     name => 'reCaptcha',
     author_name => 'Six Apart, Ltd.',
     author_link => 'http://www.movabletype.com/',
-	blog_config_template => <<TMPL,
+    blog_config_template => <<TMPL,
 <dl>
 <dt>reCaptcha public key</dt>
 <dd><input name="recaptcha_publickey" size="40" value="<mt:var name="recaptcha_publickey">" /></dd>
@@ -45,7 +45,7 @@ sub init_registry {
         'captcha_providers' => {
             'sixapart_rc' => {
                 'label' => 'reCaptcha',
-				'class' => 'reCaptcha',
+                'class' => 'reCaptcha',
             },
         },
     });
