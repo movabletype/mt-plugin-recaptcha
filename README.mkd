@@ -25,18 +25,18 @@ Captcha plugin powered by reCaptcha: <http://recaptcha.net/>.
 
 <http://www.tildemark.com/movable-type/adding-captcha-to-comments-in-movable-type-4.html>
 
-1. Register for an account on reCaptcha and follow the links to "add a new
-   site" to get the "reCaptcha public key" and "reCaptcha private key".
-2. Install the reCaptcha plugin.
-3. Go the Blog menu Tools > Plugins and open the settings for the reCaptcha
-   plugin.
-4. Enter the keys into the respective public and private fields and click "Save
-   Changes".
-5. Go to Blog menu Preferences > Comment.
-6. Select "reCaptcha" as the value for "CAPTCHA Provider" and click "Save
-   Changes".
-7. Edit the template containing the commenting form. *In the default templates
-   this is th "Comment Form" template.*
+* Register for an account on reCaptcha and follow the links to "add a new
+  site" to get the "reCaptcha public key" and "reCaptcha private key".
+* Install the reCaptcha plugin.
+* Go the Blog menu Tools > Plugins and open the settings for the reCaptcha
+  plugin.
+* Enter the keys into the respective public and private fields and click "Save
+  Changes".
+* Go to Blog menu Preferences > Comment.
+* Select "reCaptcha" as the value for "CAPTCHA Provider" and click "Save
+  Changes".
+* Edit the template containing the commenting form. *In the default templates
+  this is th "Comment Form" template.*
 
 Look for one of the following blocks of code (from default templates in MT4.0x and MT4.1x):
 
@@ -58,15 +58,15 @@ Replace this with this code:
 
 > **Note:** The `mt:If` tag will remove the catcha if the "CAPTCHA Provider" setting is changed to "none" in Movable Type.
 
-8. Open the Javascript index template and remove the followin code, or place
-   the following code in a `mt:Ignore` tag. (This code was in the default
-   templates in MT4.0x and MT4.1x):
+* Open the Javascript index template and remove the followin code, or place
+  the following code in a `mt:Ignore` tag. (This code was in the default
+  templates in MT4.0x and MT4.1x):
 
     <mt:If tag="MTCaptchaFields">
     captcha_timer = setInterval('delayShowCaptcha()', 1000);
     </mt:If>
 
-9. Rebuild index and individual entry archives.
+* Rebuild index and individual entry archives.
 
 
 ## Installation
