@@ -57,5 +57,3 @@ else if ( typeof(commenter_name) != \"undefined\" ) {
 
 $provider = new reCaptcha();
 $_captcha_providers[$provider->get_key()] = $provider;
-
-?>
