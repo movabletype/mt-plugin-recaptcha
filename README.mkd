@@ -23,7 +23,7 @@ Captcha plugin powered by reCaptcha: <http://recaptcha.net/>.
 
 ## Documentation
 
-<http://www.tildemark.com/movable-type/adding-captcha-to-comments-in-movable-type-4.html>
+<http://www.tildemark.com/adding-captcha-to-comments-in-movable-type-4/>
 
 * Register for an account on reCaptcha and follow the links to "add a new
   site" to get the "reCaptcha public key" and "reCaptcha private key".
