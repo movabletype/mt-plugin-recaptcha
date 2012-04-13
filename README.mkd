@@ -66,6 +66,15 @@ Replace this with this code:
     captcha_timer = setInterval('delayShowCaptcha()', 1000);
     </mt:If>
 
+...or remove/comment out mtShowCaptcha() call in mtCommentFormOnFocus function
+
+    function mtCommentFormOnFocus() {
+        // if CAPTCHA is enabled, this causes the captcha image to be
+        // displayed if it hasn't been already.
+        mtShowCaptcha(); <---- this
+    }
+
+
 * Rebuild index and individual entry archives.
 
 
