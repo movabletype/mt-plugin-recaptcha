@@ -22,7 +22,7 @@ my $plugin = MT::Plugin::reCaptcha->new({
     description => 'CAPTCHA plugin powered by reCaptcha.  Follow the instruction specified in README to use reCaptcha on your published blog.',
     name => 'reCaptcha',
     author_name => 'Six Apart, Ltd.',
-    author_link => 'http://www.movabletype.com/',
+    author_link => 'http://www.movabletype.org/',
     blog_config_template => <<TMPL,
 <dl>
 <dt>reCaptcha public key</dt>
