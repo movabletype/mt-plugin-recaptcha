@@ -69,13 +69,14 @@ sub validate_captcha {
     my $self = shift;
     my ($app) = @_;
 
-    my $entry_id = $app->param('entry_id')
-      or return 0;
-
-    my $entry = $app->model('entry')->load($entry_id)
-      or return 0;
-
-    my $blog_id = $entry->blog_id;
+    my $blog_id = $app->param('blog_id');
+    if ( my $entry_id = $app->param('entry_id') ) {
+        my $entry = $app->model('entry')->load($entry_id)
+            or return 0;
+        $blog_id = $entry->blog_id;
+    };
+    return 0 unless $blog_id;
+    return 0 unless $app->model('blog')->count( { id => $blog_id } );
 
     my $config = MT::Plugin::reCaptcha->instance->get_config_hash("blog:$blog_id");
     my $privatekey = $config->{recaptcha_privatekey};
@@ -86,7 +87,7 @@ sub validate_captcha {
     return 0 unless $ua;
 
     require HTTP::Request;
-    my $req = HTTP::Request->new(POST => 'http://api-verify.recaptcha.net/verify');
+    my $req = HTTP::Request->new(POST => 'http://www.google.com/recaptcha/api/verify');
     $req->content_type("application/x-www-form-urlencoded");
     require MT::Util;
     my $content = 'privatekey=' . MT::Util::encode_url($privatekey);
