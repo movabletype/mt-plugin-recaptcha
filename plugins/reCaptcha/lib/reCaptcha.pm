@@ -39,11 +39,11 @@ sub form_fields {
     return <<FORM_FIELD;
 <div id="recaptcha_script" style="display:block">
 <script type="text/javascript"
-   src="https://www.google.com/recaptcha/api/challenge?k=$publickey">
+   src="//www.google.com/recaptcha/api/challenge?k=$publickey">
 </script>
 
 <noscript>
-   <iframe src="https://www.google.com/recaptcha/api/noscript?k=$publickey"
+   <iframe src="//www.google.com/recaptcha/api/noscript?k=$publickey"
        height="300" width="500" frameborder="0"></iframe><br>
    <textarea name="recaptcha_challenge_field" rows="3" cols="40">
    </textarea>

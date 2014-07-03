@@ -58,7 +58,7 @@ Replace this with this code:
 
 > **Note:** The `mt:If` tag will remove the catcha if the "CAPTCHA Provider" setting is changed to "none" in Movable Type.
 
-Open the Javascript index template and remove the followin code, or place the following code in a `mt:Ignore` tag. (This code was in the default templates in MT4.0x and MT4.1x):
+Open the Javascript index template and remove the following code or place it in a `mt:Ignore` block. (This code was in the default templates in MT4.0x and MT4.1x):
 
 
      <mt:If tag="MTCaptchaFields">
