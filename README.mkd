@@ -1,7 +1,7 @@
 # reCaptcha, a plugin for Movable Type
 
 * Authors: Six Apart
-* Copyright: 2009-2013 Six Apart Ltd.
+* Copyright: 2009 Six Apart Ltd.
 * License: MIT
 * Site: <http://www.movabletype.org/>
 
