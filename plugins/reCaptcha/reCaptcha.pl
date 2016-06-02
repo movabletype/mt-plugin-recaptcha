@@ -1,14 +1,23 @@
 ##############################################################################
-# Copyright © 2010 Six Apart Ltd.
-# This program is free software: you can redistribute it and/or modify it
-# under the terms of version 2 of the GNU General Public License as published
-# by the Free Software Foundation, or (at your option) any later version.
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-# version 2 for more details.  You should have received a copy of the GNU
-# General Public License version 2 along with this program. If not, see
-# <http://www.gnu.org/licenses/>.
+# Copyright (c) 2009 Six Apart
+#
+# Permission is hereby granted, free of charge, to any person obtaining
+# a copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom
+# the Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+# OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
+# THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 package MT::Plugin::reCaptcha;
 
@@ -22,7 +31,7 @@ my $plugin = MT::Plugin::reCaptcha->new({
     description => 'CAPTCHA plugin powered by reCaptcha.  Follow the instruction specified in README to use reCaptcha on your published blog.',
     name => 'reCaptcha',
     author_name => 'Six Apart, Ltd.',
-    author_link => 'http://www.movabletype.org/',
+    author_link => 'http://www.movabletype.com/',
     blog_config_template => <<TMPL,
 <dl>
 <dt>reCaptcha public key</dt>
@@ -35,7 +44,7 @@ TMPL
         ['recaptcha_publickey', { Scope   => 'blog' }],
         ['recaptcha_privatekey', { Scope   => 'blog' }],
     ]),
-    version => '0.25',
+    version => '0.3',
 });
 
 MT->add_plugin($plugin);
