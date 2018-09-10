@@ -44,7 +44,7 @@ TMPL
         ['recaptcha_publickey', { Scope   => 'blog' }],
         ['recaptcha_privatekey', { Scope   => 'blog' }],
     ]),
-    version => '0.3',
+    version => '0.4',
 });
 
 MT->add_plugin($plugin);
