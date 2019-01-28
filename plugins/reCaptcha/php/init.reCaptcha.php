@@ -40,20 +40,18 @@ class reCaptcha extends BaseCaptchaProvider {
         }
 
         $fields = "
-<div id=\"recaptcha_script\" style=\"display:block\">
 <script type=\"text/javascript\"
-   src=\"http://api.recaptcha.net/challenge?k=$publickey\">
+   src=\"//www.google.com/recaptcha/api.js\" async defer>
 </script>
+<div id=\"recaptcha_script\" class=\"g-recaptcha\" data-sitekey=\"$publickey\">
+</div>
 
 <noscript>
-   <iframe src=\"http://api.recaptcha.net/noscript?k=$publickey\"
-       height=\"300\" width=\"500\" frameborder=\"0\"></iframe><br>
-   <textarea name=\"recaptcha_challenge_field\" rows=\"3\" cols=\"40\">
-   </textarea>
-   <input type=\"hidden\" name=\"recaptcha_response_field\"
-       value=\"manual_challenge\">
+   <iframe src=\"//www.google.com/recaptcha/api/fallback?k=$publickey\"
+       height=\"302\" width=\"422\" frameborder=\"0\"></iframe><br>
+   <textarea id=\"g-recaptcha-response\" name=\"g-recaptcha-response\"
+       class=\"g-recaptcha-response\"></textarea>
 </noscript>
-</div>
 <script type=\"text/javascript\">
 if ( typeof(mtCaptchaVisible) != \"undefined\" )
     mtCaptchaVisible = true;

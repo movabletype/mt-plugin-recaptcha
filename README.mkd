@@ -8,7 +8,7 @@
 
 ## Overview
 
-Captcha plugin powered by reCaptcha: <http://recaptcha.net/>.
+Captcha plugin powered by reCaptcha: <https://developers.google.com/recaptcha/>.
 
 
 ## Requirements
@@ -18,7 +18,7 @@ Captcha plugin powered by reCaptcha: <http://recaptcha.net/>.
 
 ## Features
 
-* Provides captcha powered by reCaptcha.
+* Provides captcha powered by reCaptcha v2.
 
 
 ## Documentation
